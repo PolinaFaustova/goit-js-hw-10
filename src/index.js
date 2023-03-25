@@ -7,21 +7,37 @@ const countryInfo = document.querySelector('.country-info');
 
 const DEBOUNCE_DELAY = 300;
 
-// function inputInfo(event) {
-//   event.preventDefault();
-//   console.log(inputEl.value);
+function handleInput(event) {
+  event.preventDefault();
+  console.log(inputEl.value);
+}
+inputEl.addEventListener('input', handleInput, fetchCountries);
 
-//   fetch('https://restcountries.com/v3.1/name/{name}')
-//     .then(response => response.json())
-//     .then(data => console.log(data))
+// import './css/styles.css';
+// import { fetchCountries } from './fetchCountries';
+
+// const inputEl = document.querySelector('#search-box');
+// const countryList = document.querySelector('.country-list');
+// const countryInfo = document.querySelector('.country-info');
+
+// const DEBOUNCE_DELAY = 300;
+
+// function handleInput(event) {
+//   event.preventDefault();
+//   const searchQuery = inputEl.value.trim();
+
+//   if (searchQuery === '') {
+//     return;
+//   }
+
+//   fetchCountries(searchQuery)
+//     .then(data => {
+//       console.log(JSON.stringify(data, null, 2));
+//     })
 //     .catch(error => console.log(error));
 // }
 
-// function fetchCountries(name) {
-
-// }
-
-// inputEl.addEventListener('input', inputInfo);
+// inputEl.addEventListener('input', handleInput);
 
 // ЗАДАЧА 2
 // ВИКОРИСТОВУЮЧИ API ДАНОГО ПОСИЛАННЯ
