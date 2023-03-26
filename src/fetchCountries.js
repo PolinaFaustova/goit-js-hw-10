@@ -1,13 +1,17 @@
 function fetchCountries(name) {
   return fetch(
-    `https://restcountries.com/v3.1/name/${name}?fields=name,flags,capital,population,languages`
+    `https://restcountries.com/v3.1/name/${name}?fields=name,capital,population,flags,languages`
   )
-    .then(response => {
-      if (!response.ok) {
+    .then(res => {
+      if (!res.ok) {
         throw new Error('Oops, there is no country with that name');
       }
-      return response.json();
+      return res.json();
     })
-    .catch(error => Notiflix.Notify.failure(error.message));
+    .catch(error => {
+      console.error(error);
+      throw new Error('Oops, something went wrong');
+    });
 }
+
 export { fetchCountries };
