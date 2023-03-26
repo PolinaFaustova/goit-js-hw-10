@@ -28,11 +28,11 @@ function render(countries) {
 function createCountryInfo(country) {
   const { name, flags, population, capital } = country;
   const languages = Object.values(country.languages).join(', ');
-  return `<li><div class="flag-wrapper"><img src="${flags.svg}" alt="flags" width="55">
-    <h2 class="title-country">${name.official}</h2></div>
-    <p>Population: ${population}</p>
-    <p>Capital: ${capital}</p>
-    <p>Language: ${languages}</p>
+  return `<li><div class="flag-wrapper"><img src="${flags.svg}" alt="flags" width="120">
+    <h2 class="name-country">${name.official}</h2></div>
+    <p class="new-style">Capital: ${capital}</p>
+    <p class="new-style">Population: ${population}</p>
+    <p class="new-style">Language: ${languages}</p>
     </li>`;
 }
 
@@ -41,7 +41,7 @@ function createCountryList(country) {
   return `
   <li>
     <div class="flag-wrapper">
-      <img src="${flags.svg}" alt="flags" width="55">
+      <img src="${flags.svg}" alt="flags" width="40">
       <h2 class="title-country">${name.official}</h2>
     </div>
   </li>
